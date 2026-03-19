@@ -96,10 +96,5 @@ def my_daily_news():
 # ⏰ 3. 予約と待機
 # ==========================================
 # 毎日「07:00」に実行（RenderのTZ設定がAsia/Tokyoなら日本時間になります）
-schedule.every().day.at("07:00").do(my_daily_news)
-
-print("⏰ 待機モード起動。毎朝07:00に窓の杜風ニュースをお届けします。")
-
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+# 予約機能は一旦忘れて、起動したらすぐに1回実行する
+my_daily_news()
